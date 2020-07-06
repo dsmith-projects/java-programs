@@ -1,17 +1,17 @@
-//
-//
-import java.util.Scanner;
+// EjecucionCalculadoraDesempeño.java - David Smith Solano - 5 julio, 2020
+// Clase que 'main' que instancia la clase CalculadoraDesempeño y maneja i/o para cálculo del desempeño del empleado
+import java.util.Scanner; // Necesito la clase Scanner para leer input de consola e imprimir en consola
 
 public class EjecucionCalculadoraDesempenno {
-    public static void main(String[] args) throws Exception {
+    public static void main(final String[] args) throws Exception { // método 'main': punto de partida del program
 
-        Scanner entrada = new Scanner(System.in);
-        CalculadoraDesempenno calculadoraDesempenno = new CalculadoraDesempenno();
-        System.out.println("Hello, World!");
+        // Creo objeto Scanner para leer/escribir y una instancia de la clase CalculadoraDesempenno
+        final Scanner entrada = new Scanner(System.in);
+        final CalculadoraDesempenno calculadoraDesempenno = new CalculadoraDesempenno();
+        System.out.println("\n >>> EVALUACIÓN MENSUAL DEL DESEMPEÑO <<<\n");
 
         // Variables necesarias para calcular el porcentaje de puntualidad
         int cantTardiasMenor1H, cantTardiasMenor2H, cantTardiasMenor3H, cantTardiasInjustificadas;
-        double porcentajePuntualidad;
 
         // Input de datos para calcular el porcentaje de puntualidad
         System.out.println("\n\t**** PUNTUALIDAD ****");
@@ -26,26 +26,23 @@ public class EjecucionCalculadoraDesempenno {
         System.out.print("\t- Injustificadas: ");
         cantTardiasInjustificadas = entrada.nextInt();
 
-        // Output del cálculo del porcentaje de puntualidad
+        // Llamado al método que realiza el cálculo del porcentaje de puntualidad
         calculadoraDesempenno.calcularPuntualidad(cantTardiasMenor1H, cantTardiasMenor2H, cantTardiasMenor3H, cantTardiasInjustificadas);
-        //System.out.printf("Puntualidad: %.2f\n", porcentajePuntualidad);
 
         // Variables necesarias para calcular el porcentaje de responsabilidad
-        double notaResponsabilidad, porcentajeResponsabilidad;
+        double notaResponsabilidad;
 
-        // Input de datos para calcular el porcentaje de responsabilidad
+        // Output e input de datos para calcular el porcentaje de responsabilidad
         System.out.println("\n\t**** RESPONSABILIDAD ****");
         System.out.println();
         System.out.print("Ingrese la nota de responsabilidad: ");
         notaResponsabilidad = entrada.nextDouble();
-        
 
-        // Output del cálculo del porcentaje de responsabilidad
+        // Llamado al método que realiza el cálculo del porcentaje de responsabilidad
         calculadoraDesempenno.calcularResponsabilidad(notaResponsabilidad);
-        //System.out.printf("Responsabilidad: %.2f\n", porcentajeResponsabilidad);
 
         // Variables necesarias para calcular el porcentaje de iniciativa y creatividad
-        double notaIniciativaCreatividad, porcentajeIniciativaCreatividad;
+        double notaIniciativaCreatividad;
 
         // Input de datos para calcular el porcentaje de iniciativa y creatividad
         System.out.println("\n\t**** INICIATIVA Y CREATIVIDAD ****");
@@ -54,16 +51,13 @@ public class EjecucionCalculadoraDesempenno {
         notaIniciativaCreatividad = entrada.nextDouble();
         
 
-        // Output del cálculo del porcentaje de iniciativa y creatividad
+        // Llamado al método que realiza el cálculo del porcentaje de iniciativa y creatividad
         calculadoraDesempenno.calcularIniciativaCreatividad(notaIniciativaCreatividad);
-        //System.out.printf("Iniciativa y creatividad: %.2f\n", porcentajeIniciativaCreatividad);
-        
         
         // Variables necesarias para calcular el porcentaje de compañerismo
         double notaCompannero1, notaCompannero2, notaCompannero3, notaCompannero4, notaCompannero5;
-        double porcentajeCompannerismo;
 
-        // Input de datos para calcular el porcentaje de compañerismo
+        // Output e input de datos para obtener las notas de las evaluaciones de los 5 compañeros(as)
         System.out.println("\n\t**** COMPAÑERISMO ****");
         System.out.println();
         System.out.println("Ingrese las notas asignadas por los/as compañeros/as:");
@@ -78,9 +72,8 @@ public class EjecucionCalculadoraDesempenno {
         System.out.print("\t- Compañero/a 5: ");
         notaCompannero5 = entrada.nextInt();
 
-        // Output del cálculo del porcentaje de compañerismo
+        // Llamado al método que realiza el cálculo del porcentaje de compañerismo
         calculadoraDesempenno.calcularCompannerismo(notaCompannero1, notaCompannero2, notaCompannero3, notaCompannero4, notaCompannero5);
-        //System.out.printf("Compañerismo: %.2f\n", porcentajeCompannerismo);
         
         // Variables necesarias para mostrar la calificación final
         double notaFinal;
@@ -95,8 +88,11 @@ public class EjecucionCalculadoraDesempenno {
         resultadoCualitativo = calculadoraDesempenno.getResultadoCualitativo();
         
         // Impresión en consola de la calificación final y resultado cualitativo del empleado
-        System.out.printf("\n>>>>> Nota Final: %.2f\n>>>> Resultado cualitativo: %s\n", notaFinal, resultadoCualitativo);
+        System.out.printf("\n>>>> NOTA FINAL: %.2f\n>>>> RESULTADO CUALITATIVO: %s\n\n", notaFinal, resultadoCualitativo);
         
+        // Cierra en ingreso de datos para evitar problemas de seguridad
+        entrada.close();
 
-    }
-}
+    } // fin del main
+
+} // Fin de la clase EjecucionCalculadoraDesempenno
