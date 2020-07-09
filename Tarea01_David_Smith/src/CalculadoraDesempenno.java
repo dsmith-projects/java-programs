@@ -149,10 +149,9 @@ public class CalculadoraDesempenno { // Clase que realiza los cálculos del dese
         if(valorValido(totalDiasConTardias)){
             if(valorValido(cantTardiasMenor1Hora) && valorValido(cantTardiasMenor2Horas) && valorValido(cantTardiasMenor3Horas) && valorValido(cantTardiasinjustificadas)){
                 puntosPerdidos = (0.5 * cantTardiasMenor1Hora) + (1.0 * cantTardiasMenor2Horas) + (1.5 * cantTardiasMenor3Horas) + (5.0 * cantTardiasinjustificadas);
+                setPorcentajePuntualidad(25.0 - puntosPerdidos);
             }
         }
-        
-        setPorcentajePuntualidad(25.0 - puntosPerdidos);
     }
 
     
