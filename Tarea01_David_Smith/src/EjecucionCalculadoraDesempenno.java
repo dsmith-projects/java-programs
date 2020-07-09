@@ -1,6 +1,6 @@
 // EjecucionCalculadoraDesempeño.java - David Smith Solano - 5 julio, 2020
 // Clase que 'main' que instancia la clase CalculadoraDesempeño y maneja i/o para cálculo del desempeño del empleado
-import java.util.InputMismatchException;
+import java.util.InputMismatchException; // Para el manejo de excepciones
 import java.util.Scanner; // Necesito la clase Scanner para leer input de consola e imprimir en consola
 
 public class EjecucionCalculadoraDesempenno {
