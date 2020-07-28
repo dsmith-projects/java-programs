@@ -3,9 +3,23 @@
 
 public class LibroCalificaciones 
 {
+    private String nombreDelCurso;
+
+    public LibroCalificaciones(String nombre){
+        nombreDelCurso = nombre;
+    }
+
+    public void establecerNombreDelCurso(String nombre){
+        nombreDelCurso = nombre;
+    }
+
+    public String obtenerNombreDelCurso(){
+        return nombreDelCurso;
+    }
+
     public void mostrarMensaje()
     {
-        System.out.println("Bienvenid@ al libro de calificaciones: ");
+        System.out.printf("Bienvenid@ al libro de calificaciones para \n%s!\n", obtenerNombreDelCurso());
     }
     
 }
